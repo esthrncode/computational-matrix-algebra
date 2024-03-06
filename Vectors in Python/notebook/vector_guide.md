@@ -24,3 +24,79 @@ Define a vector with NumPy:
 import numpy as np
 vector_np = np.array([1, 2, 3, 4])
 ``` 
+### Vector Equality in NumPy and Lists
+In Python, the equality of vectors can be checked differently in lists and NumPy arrays.
+```bash 
+# Lists
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+print(list1 == list2)  # Output: True
+
+# NumPy Arrays
+import numpy as np
+array1 = np.array([1, 2, 3])
+array2 = np.array([1, 2, 3])
+print(array1 == array2)  # Output: [True True True]
+```
+### Zero Vectors and Ones Vectors in NumPy
+```bash
+import numpy as np
+
+# Zero Vector
+zero_vector = np.zeros(4)
+print(zero_vector)  # Output: [0. 0. 0. 0.]
+
+# Ones Vector
+ones_vector = np.ones(4)
+print(ones_vector)  # Output: [1. 1. 1. 1.]
+``` 
+### Vector Addition and Subtraction
+```bash
+import numpy as np
+
+# Vectors
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+
+# Addition
+v_add = v1 + v2
+
+# Subtraction
+v_sub = v1 - v2
+```
+### Scalar-Vector Addition in Python
+```bash
+scalar = 5
+v_scalar_add = v1 + scalar
+```
+### Linear Combination with NumPy
+#### Adding a Scalar to a NumPy Array
+
+```bash
+import numpy as np
+
+# Given vector
+x_np = np.array([1.0, 2.0, 3.0])
+
+# Add scalar to each element of the vector
+scalar_value = 20.20
+x_np = x_np + scalar_value
+``` 
+#### Linear Combination with NumPy using a Custom Function lincomb
+```bash
+def lincomb(coef, vectors):
+    combination = sum(c * np.array(v) for c, v in zip(coef, vectors))
+    return combination
+
+# Example usage:
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+alpha = 0.5
+beta = -0.8
+result = lincomb([alpha, beta], [x, y])
+```
+###  Linear Combinations Relation to Linear Systems
+Linear combinations are a fundamental concept in linear algebra that connect directly to solving linear systems. In the context of a linear system `Ax = b`, finding a solution is equivalent to finding a linear combination of the columns of `A` that results in the vector `b`.
+
+##
+**Next**: *Solving Linear System of equations*
